@@ -1,10 +1,10 @@
 import pandas as pd
 
-df = pd.read_csv('diem_thi_2020.csv')
-df1 = pd.read_csv('diem_thi_2021.csv')
-df2 = pd.read_csv('diem_thi_thpt_2022.csv')
-df3 = pd.read_csv('diem_thi_thpt_2023.csv')
-df4 = pd.read_csv('diem_thi_thpt_2024.csv')
+df = pd.read_csv('D:\BTL_TDA\Data\diem_thi_2020.csv')
+df1 = pd.read_csv('D:\BTL_TDA\Data\diem_thi_2021.csv')
+df2 = pd.read_csv('D:\BTL_TDA\Data\diem_thi_2022.csv')
+df3 = pd.read_csv('D:\BTL_TDA\Data\diem_thi_2023.csv')
+df4 = pd.read_csv('D:\BTL_TDA\Data\diem_thi_2024.csv')
 
 
 cols_to_convert = ['toan', 'ngu_van', 'ngoai_ngu','vat_li','hoa_hoc','sinh_hoc','lich_su','dia_li','gdcd']
