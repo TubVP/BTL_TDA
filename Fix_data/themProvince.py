@@ -20,7 +20,11 @@ province_mapping = {
 # Chuyển sang DataFrame
 province_df = pd.DataFrame(list(province_mapping.items()), columns=['province_code', 'province_name'])
 
-file_list = ['diem_thi_thpt_2022.csv', 'diem_thi_thpt_2023.csv', 'diem_thi_thpt_2024.csv']
+file_list = [
+    r'C:\Users\Admin\Desktop\BTL_TDA\Data\diem_thi_2022.csv',
+    r'C:\Users\Admin\Desktop\BTL_TDA\Data\diem_thi_2023.csv'
+]
+
 
 for file in file_list:
     # Đọc file
