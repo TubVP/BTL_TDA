@@ -91,11 +91,21 @@ Lập dashboard hiển thị sự khác biệt về điểm số từng khối v
 ![Screenshot 2024-11-30 230903](https://github.com/user-attachments/assets/9d1266dc-deb4-4157-aaaa-5cd06224696e)
 ![Screenshot 2024-11-30 230923](https://github.com/user-attachments/assets/62ed59ad-788e-43f7-90f8-44a619df1c40)
 
+Tiếp theo là phần dự báo xu hướng điểm chung vị của các khối A, B, C, D,...
 
+![image](https://github.com/user-attachments/assets/d1f14134-4c7e-44d7-82f3-2c6152c10a7d)
 
+Huấn luyện mô hình và dự báo
 
+![image](https://github.com/user-attachments/assets/007a7536-74a4-4cdc-a2f4-bbbd33eaffbe)
 
+Vẽ biểu đồ thể hiện dự báo
 
+![image](https://github.com/user-attachments/assets/2c665419-a840-49d2-af17-6034275d6ae3)
+
+Biểu đồ nhận được:
+
+![image](https://github.com/user-attachments/assets/80b15a5e-fb1d-4b95-9400-ed78c3ad63ce)
 
 
 
