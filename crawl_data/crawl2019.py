@@ -85,20 +85,13 @@ while True:
                         student.get('gdcd'),
                         province_name
                     ]
-
-                    # Kiểm tra dữ liệu có đầy đủ và hợp lệ không trước khi ghi
-                    if all(field is not None for field in row):
-                        with open(file_path, mode='a', encoding='utf-8', newline='') as file:
-                            writer = csv.writer(file)
-                            writer.writerow(row)
+                    with open(file_path, mode='a', encoding='utf-8', newline='') as file:
+                        writer = csv.writer(file)
+                        writer.writerow(row)
                         processed_sbd.add(str(sbd))
                         max_sbd_dict[province_code] = sbd  # Cập nhật SBD lớn nhất
                         no_data_count = 0  # Reset đếm khi có dữ liệu
-                    else:
-                        print(f"Không đủ dữ liệu cho SBD {sbd}, bỏ qua.")
-                        no_data_count += 1
                 else:
-                    print(f"Không có dữ liệu cho SBD {sbd}, bỏ qua.")
                     no_data_count += 1
             else:
                 print(f"Lỗi yêu cầu trang SBD {sbd}, mã trạng thái: {response.status_code}")
@@ -114,4 +107,4 @@ while True:
 
         time.sleep(1)  # Tránh gửi quá nhiều yêu cầu trong thời gian ngắn
 
-    print(f"Hoàn tất crawl cho tỉnh {province_name}.")
+    print(f"Hoàn tất crawl cho tỉnh {province_name}.") 
