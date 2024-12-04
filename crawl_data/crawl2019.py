@@ -101,6 +101,6 @@ else:
             print("Liên tục không có dữ liệu, dừng quét.")
             break
 
-        time.sleep(0.5)  # Tránh gửi quá nhiều yêu cầu trong thời gian ngắn
+        time.sleep(0.2)  # Tránh gửi quá nhiều yêu cầu trong thời gian ngắn
 
     print(f"Hoàn tất tiếp tục crawl từ SBD {start_sbd}.")
