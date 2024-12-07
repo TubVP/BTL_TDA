@@ -105,6 +105,6 @@ while True:
             print("Liên tục không có dữ liệu, dừng quét.")
             break
 
-        time.sleep(1)  # Tránh gửi quá nhiều yêu cầu trong thời gian ngắn
+        time.sleep(0.3)  # Tránh gửi quá nhiều yêu cầu trong thời gian ngắn
 
     print(f"Hoàn tất crawl cho tỉnh {province_name}.") 
