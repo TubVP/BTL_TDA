@@ -3,7 +3,7 @@ import os
 import requests
 import time
 
-# Danh sách mã tỉnh và tên tương ứng
+
 provinces = {
     '01': 'Hà Nội', '02': 'TP. Hồ Chí Minh', '03': 'Hải Phòng', '04': 'Đà Nẵng', '05': 'Hà Giang',
     '06': 'Cao Bằng', '07': 'Lai Châu', '08': 'Lào Cai', '09': 'Tuyên Quang', '10': 'Lạng Sơn',
@@ -20,24 +20,24 @@ provinces = {
     '62': 'Điện Biên', '63': 'Đắk Nông', '64': 'Hậu Giang',
 }
 
-# Đường dẫn file CSV chứa điểm thi
+
 file_path = r'C:\Users\Admin\Desktop\BTL_TDA\crawl_data\diem_thi_2019.csv'
 
-# Đọc danh sách SBD đã xử lý từ file điểm thi (CSV)
+
 processed_sbd = set()
-max_sbd_dict = {}  # Lưu SBD lớn nhất đã xử lý cho từng tỉnh
+max_sbd_dict = {} 
 
 if os.path.exists(file_path):
     with open(file_path, mode='r', encoding='utf-8') as file:
         reader = csv.DictReader(file)
         for row in reader:
             sbd = row['sbd']
-            province_code = sbd[:2]  # Lấy mã tỉnh từ 2 ký tự đầu của SBD
+            province_code = sbd[:2]  
             processed_sbd.add(sbd)
             max_sbd_dict[province_code] = max(max_sbd_dict.get(province_code, 0), int(sbd))
 
 while True:
-    # Nhập mã tỉnh và ánh xạ tên tỉnh
+   
     province_code = input("Nhập mã tỉnh (hoặc 'exit' để thoát): ").zfill(2)
     if province_code.lower() == 'exit':
         print("Kết thúc chương trình.")
@@ -48,19 +48,17 @@ while True:
         print(f"Mã tỉnh {province_code} không hợp lệ. Vui lòng kiểm tra lại!")
         continue
 
-    # Tính toán start_sbd
+   
     province_base = int(province_code) * 1_000_000
     max_sbd = max_sbd_dict.get(province_code, province_base - 1)
     start_sbd = max(max_sbd + 1, province_base)
 
-    # In thông tin bắt đầu crawl
     print(f"Bắt đầu crawl từ SBD: {start_sbd} cho tỉnh {province_name}...")
 
-    # Crawl dữ liệu bắt đầu từ start_sbd
     no_data_count = 0
-    max_no_data = 100  # Ngưỡng dừng nếu không có dữ liệu cho 100 thí sinh liên tiếp
+    max_no_data = 100 
 
-    for sbd in range(start_sbd, start_sbd + 100000):  # Quét 100000 SBD tiếp theo
+    for sbd in range(start_sbd, start_sbd + 100000): 
         if str(sbd) in processed_sbd:
             print(f"SBD {sbd} đã được xử lý, bỏ qua.")
             continue

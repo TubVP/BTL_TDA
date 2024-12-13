@@ -7,12 +7,12 @@ file_path = r'C:\Users\Admin\Desktop\BTL_TDA\crawl_data\diem_thi_2019.csv'
 # Hàm chuyển đổi SBD từ string -> float -> int
 def convert_sbd(sbd):
     try:
-        # Chuyển sbd từ string sang float
+       
         sbd_float = float(sbd)
-        # Sau đó chuyển từ float sang int (nếu có phần thập phân sẽ bỏ đi)
+   
         return str(int(sbd_float))
     except ValueError:
-        return sbd  # Nếu có lỗi, trả lại giá trị gốc
+        return sbd  
 
 # Kiểm tra nếu file tồn tại
 if os.path.exists(file_path):
